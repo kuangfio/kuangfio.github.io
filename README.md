@@ -1,4 +1,4 @@
-Fiona Kuang's repo for PRA1 for ECE444. This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.io.git
+Fiona Kuang's repo for PRA1 for ECE444. The source code for this repo is taken from https://github.com/varadbhogayata/varadbhogayata.github.io.git
 
 # Personal Portfolio ⚡️ 
 > A clean, beautiful, responsive portfolio template for Software Developers!

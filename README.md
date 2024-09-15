@@ -1,5 +1,25 @@
 Fiona Kuang's repo for PRA1 for ECE444. The source code for this repo is taken from https://github.com/varadbhogayata/varadbhogayata.github.io.git
 
+# Activity 1
+<p> 
+  <kbd>
+    <img src="assets/img/PRA_SS/Act1SS.png">
+    <p> Screenshot of the repo after committing the cloned repo and updated readme. </p>
+  </kbd>
+</p>
+
+# Activity 2
+<p> 
+  <kbd>
+    <img src="assets/img/PRA_SS/ACT2repo.png">
+    <p> Screenshot of the repo after committing the updated information. </p>
+    <img src="assets/img/PRA_SS/ACT2home.png">
+    <img src="assets/img/PRA_SS/ACT2home2.png">
+    <img src="assets/img/PRA_SS/ACT2home3.png">
+    <p> Screenshots of the deployed website. </p>
+  </kbd>
+</p>
+
 # Personal Portfolio ⚡️ 
 > A clean, beautiful, responsive portfolio template for Software Developers!
 

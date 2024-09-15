@@ -20,6 +20,17 @@ Fiona Kuang's repo for PRA1 for ECE444. The source code for this repo is taken f
   </kbd>
 </p>
 
+# Activity 3
+<p> 
+  <kbd>
+    <img src="assets/img/PRA_SS/Act3repo.png">
+    <p> Screenshot of the repo after committing the colour updates. </p>
+    <img src="assets/img/PRA_SS/Act3home.png">
+    <img src="assets/img/PRA_SS/Act3home2.png">
+    <p> Screenshots of the deployed website after the colour updates. </p>
+  </kbd>
+</p>
+
 # Personal Portfolio ⚡️ 
 > A clean, beautiful, responsive portfolio template for Software Developers!
 

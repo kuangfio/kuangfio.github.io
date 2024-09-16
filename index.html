@@ -397,6 +397,11 @@
             </div>
           </div>
 
+          <!--load more projects-->
+          <div id="load-more">
+            <button id="load-more-btn">Load more projects</button>
+            
+          </div>
           <!-- 1. Django Project -->
           <!-- <div class="col s12 m6 l6">
             <div class="card medium">
@@ -663,6 +668,54 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+
+    //Array of projects
+    const projects = [`<div class="col s12 m6 l4"></div>
+              <div class="card medium">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img alt="geographical information system" src="/assets/img/project-pedometer.jpg" style="height: 100%; width: 100%" class="activator" />
+          
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator teal-text hoverline">Pedometer<i
+                      class="mdi-navigation-more-vert right"></i></span>
+                  <p>
+                    A pedometer made with a microcontroller.
+                  </p>
+                </div>
+                <div class="card-reveal">
+                  <!-- TODO: change this -- only close button -->
+                  <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                  <span class="card-title grey-text"><small>Accomplishments</small><i
+                      class="mdi-navigation-close right"></i></span>
+                  <ul>
+                    <li><b>Tools:</b> C</li>
+                    <li>Implented using an accelerometer to measure the acceleration and an algorithm to calculate the steps taken.</li>
+                    <li>An OLED screen displays the number of steps taken, updating every time a step is taken.</li>
+
+                  </ul>
+                  <div class="card-action">
+                    <a aria-label="Visit the GitHub repo for  project" href="https://github.com/sarayyjaan/ECE342_project"
+                      target="_blank" data-position="top" data-tooltip="View Source"
+                      class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                        class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>`];
+
+    //Load more projects button functionality
+    const myButton = document.querySelector('#load-more-btn');
+    myButton.onclick() = function(){
+      //add the project
+      var more_proj = document.querySelector("#load-more");
+      more_proj.append(projects[0]);
+
+      //remove the button
+      myButton.remove();
+
+    }
+
   </script>
 </body>
 

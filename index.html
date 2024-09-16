@@ -399,7 +399,7 @@
 
           <!--load more projects-->
           <div id="load-more">
-            <button id="load-more-btn">Load more projects</button>
+            <button class="waves-effect waves-light btn blue darken-3" id="load-more-btn">Load more projects</button>
             
           </div>
           <!-- 1. Django Project -->
@@ -705,16 +705,16 @@
             </div>`];
 
     //Load more projects button functionality
-    const myButton = document.querySelector('#load-more-btn');
-    myButton.onclick() = function(){
+    const myButton = document.getElementById('load-more-btn');
+    myButton.addEventListener("click",function(){
       //add the project
-      var more_proj = document.querySelector("#load-more");
-      more_proj.append(projects[0]);
+      var more_proj = document.getElementById("load-more");
+      more_proj.append(projects);
 
       //remove the button
       myButton.remove();
 
-    }
+    });
 
   </script>
 </body>

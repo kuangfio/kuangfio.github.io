@@ -384,8 +384,6 @@
                   <li>Given an image of a blood cell, the model will predict what type of blood cell it is.</li>
                   <li>The model utilizes Convolutional Neural Network and Recurrent Neural Network Architecture.</li>
                   <li>The model has a test accuracy of 92.5%.</li>
-
-
                 </ul>
                 <div class="card-action">
                   <a aria-label="Visit the GitHub repo for  project" href="https://github.com/KashishMistry/bloodcellclassification"
@@ -397,10 +395,47 @@
             </div>
           </div>
 
+          <!--quiz-->
+          <!--<div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="quiz app" src="/assets/img/project-quizup-logo-1.png" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">Quiz Web-App<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  A quiz playing web app based on Django
+                </p>
+              </div>
+              <div class="card-reveal">
+                !-- TODO: change this -- only close button --
+                !-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> --
+                <span class="card-title grey-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
+                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
+                  <li>Play Quiz and see the leaderboard</li>
+
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
+                    data-tooltip="View Online"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-external-link"></i></a>
+                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/QuizUp"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>-->
+          
           <!--load more projects-->
-          <div id="load-more">
-            <button class="waves-effect waves-light btn blue darken-3" id="load-more-btn">Load more projects</button>
-            
+          <div class="col s12 m6 l4" id="load-more">
+            <button class="waves-effect waves-light btn blue darken-3" id="load-more-btn" style="position:absolute;top:50%;left:40%;">Load more projects</button>
           </div>
           <!-- 1. Django Project -->
           <!-- <div class="col s12 m6 l6">
@@ -670,46 +705,31 @@
     })
 
     //Array of projects
-    var projects = [$(`<div class="col s12 m6 l4"></div>
-              <div class="card medium">
-                <div class="card-image waves-effect waves-block waves-light">
+    var projects = [`<div class="col s12 m6 l4"></div>
+              <div class="card medium"><div class="card-image waves-effect waves-block waves-light">
                   <img alt="geographical information system" src="/assets/img/project-pedometer.jpg" style="height: 100%; width: 100%" class="activator" />
-          
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator teal-text hoverline">Pedometer<i
-                      class="mdi-navigation-more-vert right"></i></span>
-                  <p>
-                    A pedometer made with a microcontroller.
-                  </p>
-                </div>
+                </div><div class="card-content">
+                  <span class="card-title activator teal-text hoverline">Pedometer<i class="mdi-navigation-more-vert right"></i></span>
+                  <p>A pedometer made with a microcontroller.</p></div>
                 <div class="card-reveal">
-                  <!-- TODO: change this -- only close button -->
-                  <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                  <span class="card-title grey-text"><small>Accomplishments</small><i
-                      class="mdi-navigation-close right"></i></span>
-                  <ul>
-                    <li><b>Tools:</b> C</li>
+                  <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
+                  <ul><li><b>Tools:</b> C</li>
                     <li>Implented using an accelerometer to measure the acceleration and an algorithm to calculate the steps taken.</li>
                     <li>An OLED screen displays the number of steps taken, updating every time a step is taken.</li>
-
-                  </ul>
-                  <div class="card-action">
+                  </ul><div class="card-action">
                     <a aria-label="Visit the GitHub repo for  project" href="https://github.com/sarayyjaan/ECE342_project"
                       target="_blank" data-position="top" data-tooltip="View Source"
-                      class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                        class="fa fa-github"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>`)];
+                      class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
+                  </div></div></div></div>`];
 
     //Load more projects button functionality
     const myButton = document.getElementById('load-more-btn');
     myButton.addEventListener("click",function(){
       //add the project
       var more_proj = document.getElementById("load-more");
-      more_proj.append(projects[0]);
+      //for(i=0;i<projects.length;i++){
+        $(projects[0]).appendTo(more_proj);
+      //}
 
       //remove the button
       myButton.remove();

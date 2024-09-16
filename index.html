@@ -670,7 +670,7 @@
     })
 
     //Array of projects
-    const projects = [`<div class="col s12 m6 l4"></div>
+    var projects = [`<div class="col s12 m6 l4"></div>
               <div class="card medium">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img alt="geographical information system" src="/assets/img/project-pedometer.jpg" style="height: 100%; width: 100%" class="activator" />
@@ -709,7 +709,7 @@
     myButton.addEventListener("click",function(){
       //add the project
       var more_proj = document.getElementById("load-more");
-      more_proj.append(projects[0]);
+      more_proj.append($.parseHTML(projects[0]));
 
       //remove the button
       myButton.remove();

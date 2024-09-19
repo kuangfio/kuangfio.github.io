@@ -361,11 +361,11 @@
       <div class="container">
         <div class="row">
 
-          <div class="col s12 m6 l4">
+          <!--<div class="col s12 m6 l4">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
                 <img alt="blood cell classifier" src="/assets/img/project-blood-cell.jpg" style="height: 100%; width: 100%" class="activator" />
-                <!--image from https://www.istockphoto.com/vector/type-of-human-blood-cells-on-white-background-gm1366905627-437305573-->
+                !--image from https://www.istockphoto.com/vector/type-of-human-blood-cells-on-white-background-gm1366905627-437305573--
               </div>
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Blood Cell Classification Model<i
@@ -375,8 +375,8 @@
                 </p>
               </div>
               <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                !-- TODO: change this -- only close button -->
+                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> --
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
@@ -393,7 +393,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <!--quiz-->
           <!--<div class="col s12 m6 l4">
@@ -709,7 +709,107 @@
     })
 
     //Array of projects
-    var projects = [`<div class="col s12 m6 l4">
+    //TO DO: change the array so that it has more than 1 projects
+    // make a function that returns the html string instead of hard coding
+    function html_string(object){
+      var string = `<div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img alt="`;
+      string += object.title;
+      string += `" src="`;
+      string += object.img_path;
+      string += `" style="height: 100%; width: 100%" class="activator" />
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator teal-text hoverline">`;
+      string += object.title;
+      string += `<i class="mdi-navigation-more-vert right"></i></span>
+                          <p>`;
+      string += object.descript;
+      string += `</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
+                          <ul>
+                            <li><b>Tools:</b>`;
+      string+= object.tools;
+      string +=`</li>`;
+
+      for(i=0; i<object.about.length;i++){
+        string += `<li>`;
+        string += object.about[i];
+        string += `</li>`;
+      }
+
+      string += `</ul>
+                  <div class="card-action">
+                    <a aria-label="Visit the GitHub repo for  project" href="`;
+      string += object.github;
+      string += `"
+                      target="_blank" data-position="top" data-tooltip="View Source"
+                      class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+
+      return string;
+    }
+
+    var proj_objs = [{
+      title: "Pedometer",
+      img_path:"/assets/img/project-pedometer.jpg",
+      descript:"A pedometer made with a microcontroller.",
+      tools:"C",
+      about:["Implented using an accelerometer to measure the acceleration and an algorithm to calculate the steps taken.",
+        "An OLED screen displays the number of steps taken, updating every time a step is taken."],
+      github:"https://github.com/sarayyjaan/ECE342_project",
+      date: Date.parse('04 Apr 2023')
+    },
+    {
+      title: "Blood Cell Classification Model",
+      img_path:"/assets/img/project-blood-cell.jpg",
+      descript:"A deep learning model that predicts blood cell type.",
+      tools:"Python, PyTorch",
+      about:["Given an image of a blood cell, the model will predict what type of blood cell it is.",
+                  "The model utilizes Convolutional Neural Network and Recurrent Neural Network Architecture.",
+                  "The model has a test accuracy of 92.5%."],
+      github:"https://github.com/KashishMistry/bloodcellclassification",
+      date: Date.parse('05 Apr 2023')
+      }
+    ];
+
+    //sort by chronological
+    proj_objs.sort((a, b) => a.date - b.date);
+
+    //dynamically load the latest project
+    $(document).ready(function(){
+      var project_string = html_string(proj_objs.pop());
+      $(project_string).appendTo(document.getElementById("row-start"));
+    });
+    
+    //Load more projects button functionality
+    const myButton = document.getElementById('load-more-btn');
+    myButton.addEventListener("click",function(){
+      //add the project
+      var more_proj = document.getElementById("row-start");
+      //for(i=0;i<projects.length;i++){
+      if(proj_objs.length>0){
+        var project_string = html_string(proj_objs.pop());
+        $(project_string).appendTo(more_proj);
+      }
+      //}
+
+      //remove the button
+      if(proj_objs.length == 0){
+        myButton.remove();
+      }
+    });
+
+  </script>
+</body>
+<!--var projects = [`<div class="col s12 m6 l4">
                       <div class="card medium">
                         <div class="card-image waves-effect waves-block waves-light">
                           <img alt="pedometer" src="/assets/img/project-pedometer.jpg" style="height: 100%; width: 100%" class="activator" />
@@ -732,28 +832,5 @@
                           </div>
                         </div>
                       </div>
-                    </div>`];
-
-    //Load more projects button functionality
-    var proj_index = 0;
-    const myButton = document.getElementById('load-more-btn');
-    myButton.addEventListener("click",function(){
-      //add the project
-      var more_proj = document.getElementById("row-start");
-      //for(i=0;i<projects.length;i++){
-      if(proj_index<projects.length){
-        $(projects[proj_index]).appendTo(more_proj);
-        proj_index++;
-      }
-      //}
-
-      //remove the button
-      if(proj_index == projects.length){
-        myButton.remove();
-      }
-    });
-
-  </script>
-</body>
-
+                    </div>`];-->
 </html>

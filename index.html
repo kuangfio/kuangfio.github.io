@@ -795,7 +795,7 @@
       //add the project
       var more_proj = document.getElementById("row-start");
       //for(i=0;i<projects.length;i++){
-      if(proj_objs.length>0){
+      while(proj_objs.length>0){
         var project_string = html_string(proj_objs.pop());
         $(project_string).appendTo(more_proj);
       }
